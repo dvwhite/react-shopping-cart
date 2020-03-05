@@ -8,8 +8,8 @@ const Item = props => {
 
   const removeItem = (id) => {
     console.log(cart.findIndex(item => item.id === id))
-    console.log(cart.splice(cart.findIndex(item => item.id === id)))
-    // setCart([..., 1])
+    // console.log(cart.splice(cart.findIndex(item => item.id === id)))
+    setCart([...cart])
   }
 
 	return (
