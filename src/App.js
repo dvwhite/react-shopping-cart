@@ -11,9 +11,12 @@ import ShoppingCart from "./components/ShoppingCart";
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from "./contexts/CartContext";
 
+// Hooks
+import useLocalStorage from './hooks/useLocalStorage';
+
 function App() {
-  const [products] = useState(data);
-  const [cart, setCart] = useState([]);
+  const [products] = useLocalStorage('data', data);
+  const [cart, setCart] = useLocalStorage('cart', []);
   return (
     <ProductContext.Provider value={{ products }}>
       <CartContext.Provider value={{cart, setCart}}>
