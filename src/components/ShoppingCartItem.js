@@ -7,9 +7,10 @@ const Item = props => {
   const { cart, setCart } = useContext(CartContext);
 
   const removeItem = (id) => {
-    console.log(cart.findIndex(item => item.id === id))
-    // console.log(cart.splice(cart.findIndex(item => item.id === id)))
-    setCart([...cart])
+    const spliced = [...cart];
+    const pos = spliced.findIndex(item => item.id === id);
+    spliced.splice(pos, 1);
+    setCart(spliced);
   }
 
 	return (
